@@ -40,7 +40,7 @@ function createWindow(): void {
 // initialization and is ready to create browser windows.
 // Some APIs can only be used after this event occurs.
 app.whenReady().then(() => {
-  installExtension('nhdogjmejiglipccpnnnanhbledajbpd')
+  installExtension('nhdogjmejiglipccpnnnanhbledajbpd') // VUEJS_DEVTOOLS
     .then((name) => console.log(`Added Extension:  ${name}`))
     .catch((err) => console.log('An error occurred: ', err))
   // Set app user model id for windows

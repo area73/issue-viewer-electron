@@ -73,3 +73,4 @@ $ npm run build:linux
 - Install tailwind
 - Install a UI kit (flowbite-vite)
 - Install electron devtools
+- Install router
