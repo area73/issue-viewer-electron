@@ -71,4 +71,4 @@ $ npm run build:linux
 
 - Install seed
 - Install tailwind
-- Install a UI kit
+- Install a UI kit (flowbite-vite)
