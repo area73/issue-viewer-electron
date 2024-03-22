@@ -1,4 +1,4 @@
-<h1 align="center">Simple </h1>
+<h1 align="center">Simple Issue Viewer </h1>
 
 <p align="center">An Electron application with Vue3 and TypeScript</p>
 
@@ -36,8 +36,6 @@ Read [documentation](https://electron-vite.org/) for more detail.
 - [Distribution](https://electron-vite.org/guide/distribution.html)
 - [Troubleshooting](https://electron-vite.org/guide/troubleshooting.html)
 
-You can also use the [create-electron](https://github.com/alex8088/quick-start/tree/master/packages/create-electron) tool to scaffold your project for other frameworks (e.g. `React`, `Svelte` or `Solid`).
-
 ## Recommended IDE Setup
 
 - [VSCode](https://code.visualstudio.com/) + [ESLint](https://marketplace.visualstudio.com/items?itemName=dbaeumer.vscode-eslint) + [Prettier](https://marketplace.visualstudio.com/items?itemName=esbenp.prettier-vscode) + [Volar](https://marketplace.visualstudio.com/items?itemName=Vue.volar) + [TypeScript Vue Plugin (Volar)](https://marketplace.visualstudio.com/items?itemName=Vue.vscode-typescript-vue-plugin)
@@ -69,8 +67,8 @@ $ npm run build:mac
 $ npm run build:linux
 ```
 
-## Examples
+# Steps
 
-- [electron-vite-bytecode-example](https://github.com/alex8088/electron-vite-bytecode-example), source code protection
-- [electron-vite-decorator-example](https://github.com/alex8088/electron-vite-decorator-example), typescipt decorator
-- [electron-vite-worker-example](https://github.com/alex8088/electron-vite-worker-example), worker and fork
+- Install seed
+- Install tailwind
+- Install a UI kit
