@@ -9,6 +9,7 @@ const route = useRoute()
   <nav>
     <RouterLink to="/">Go to Home</RouterLink>
     <RouterLink to="/about">Go to About</RouterLink>
+    <RouterLink to="/issues">Go to Issues table</RouterLink>
   </nav>
   <hr />
   <main>
