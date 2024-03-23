@@ -13,8 +13,29 @@ const route = useRoute()
   </nav>
   <hr />
   <main>
-    <RouterView />
+    <RouterView v-slot="{ Component }">
+      <Transition>
+        <Suspense :key="route.fullPath">
+          <!-- main content -->
+          <component :is="Component"></component>
+          <!-- loading state -->
+          <template #fallback> <h1>Loading...</h1></template>
+        </Suspense>
+      </Transition>
+    </RouterView>
   </main>
   <hr />
   <Versions />
 </template>
+
+<style>
+.v-enter-active,
+.v-leave-active {
+  transition: opacity 0.5s ease;
+}
+
+.v-enter-from,
+.v-leave-to {
+  opacity: 0;
+}
+</style>
