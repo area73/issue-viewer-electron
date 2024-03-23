@@ -3,11 +3,11 @@ import useGitHubAPI from '../composables/useGitHubAPI'
 
 const { getIssues } = useGitHubAPI()
 
-const issues = getIssues('vue').then((response) => {
-  console.log(response)
-})
+const issues = await getIssues('vue')
 </script>
 <template>
   <h2>IssuesView</h2>
+  ssss
+  {{ issues }}
 </template>
 <style></style>

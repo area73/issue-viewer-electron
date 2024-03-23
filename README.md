@@ -74,3 +74,5 @@ $ npm run build:linux
 - Install a UI kit (flowbite-vite)
 - Install electron devtools
 - Install router
+- Install octokit
+- Adding Suspense and Transition
