@@ -1,0 +1,9 @@
+<script setup lang="ts">
+import Versions from '@renderer/components/Versions.vue'
+</script>
+
+<template>
+  <div class="it-footer">
+    <Versions />
+  </div>
+</template>
