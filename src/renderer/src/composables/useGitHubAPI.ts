@@ -9,17 +9,18 @@ export default function useGitHubAPI() {
         repo,
         headers: {
           'X-GitHub-Api-Version': '2022-11-28'
-        }
-        // state: 'all',
-        // per_page: 100,
-        // labels: 'bug',
-        // milestone: '*',
-        // assignee: '*',
-        // creator: '*',
-        // mentioned: '*',
-        // page: 1
+        },
+        per_page: 20,
+        page: 0
       })
-      .then((d) => d.data)
+      .then((d) => {
+        console.log(d)
+        return d.data
+      })
+      .catch((e) => {
+        console.error(e)
+        return []
+      })
 
   return {
     getIssues

@@ -1,4 +1,11 @@
-@import './base.css';
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+a {
+  @apply underline text-blue-400 hover:text-blue-200 visited:text-purple-400;
+}
+
 /*
 body {
   display: flex;
