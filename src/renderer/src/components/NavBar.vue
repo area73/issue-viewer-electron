@@ -22,16 +22,8 @@ const setActiveIf = (path: string) => {
     <div class="it-nav__list" role="group">
       <button
         type="button"
-        :class="setActiveIf('/')"
-        class="it-btn border rounded-s-lg"
-        @click="router.push('/')"
-      >
-        home
-      </button>
-      <button
-        type="button"
         :class="setActiveIf('/about')"
-        class="it-btn border-t border-b"
+        class="it-btn border rounded-s-lg"
         @click="router.push('/about')"
       >
         About

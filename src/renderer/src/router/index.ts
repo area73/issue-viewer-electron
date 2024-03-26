@@ -3,7 +3,7 @@ import { createMemoryHistory, createRouter } from 'vue-router'
 const routes = [
   {
     path: '/',
-    component: () => import('../views/HomeView.vue')
+    redirect: { path: '/issues' }
   },
   {
     path: '/about',
@@ -12,6 +12,10 @@ const routes = [
   {
     path: '/issues',
     component: () => import('../views/IssuesView.vue')
+  },
+  {
+    path: '/issue/:id',
+    component: () => import('../views/DetailView.vue')
   }
 ]
 

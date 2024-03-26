@@ -12,7 +12,7 @@ module.exports = {
       md: '0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1)',
       lg: '0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1)',
       xl: '0 20px 25px -5px rgb(0 0 0 / 0.1), 0 8px 10px -6px rgb(0 0 0 / 0.1)',
-      '2xl': '0 0px 60px -14px rgb(0 0 0 / 0.25)',
+      '2xl': '0 0px 6px -0px rgb(0 0 0 / 0.25)',
       inner: 'inset 0 2px 4px 0 rgb(0 0 0 / 0.05)',
       none: 'none'
     },
@@ -44,44 +44,21 @@ module.exports = {
         }
       }
     },
+    fontSize: {
+      '4xl': ['2.474rem', '3.5rem'],
+      '3xl': ['2.128rem', '3.5rem'],
+      '2xl': ['1.829rem', '3.5rem'],
+      xl: ['1.573rem', '3.5rem'],
+      lg: ['1.353rem', '1.75rem'],
+      md: ['1.163rem', '1.75rem'],
+      base: ['1rem', '1.75rem'],
+      sm: ['0.86rem', '1.75rem'],
+      xs: ['0.739rem', '1.75rem']
+    },
     fontFamily: {
       Montserrat: ['Montserrat', 'serif'],
-      body: [
-        'Montserrat',
-        'Inter',
-        'ui-sans-serif',
-        'system-ui',
-        '-apple-system',
-        'system-ui',
-        'Segoe UI',
-        'Roboto',
-        'Helvetica Neue',
-        'Arial',
-        'Noto Sans',
-        'sans-serif',
-        'Apple Color Emoji',
-        'Segoe UI Emoji',
-        'Segoe UI Symbol',
-        'Noto Color Emoji'
-      ],
-      sans: [
-        'Montserrat',
-        'Inter',
-        'ui-sans-serif',
-        'system-ui',
-        '-apple-system',
-        'system-ui',
-        'Segoe UI',
-        'Roboto',
-        'Helvetica Neue',
-        'Arial',
-        'Noto Sans',
-        'sans-serif',
-        'Apple Color Emoji',
-        'Segoe UI Emoji',
-        'Segoe UI Symbol',
-        'Noto Color Emoji'
-      ]
+      body: ['Montserrat', 'Inter', 'ui-sans-serif', 'system-ui'],
+      sans: ['Montserrat', 'Inter', 'ui-sans-serif', 'system-ui']
     }
   },
   plugins: [require('flowbite-typography'), require('flowbite/plugin')]
