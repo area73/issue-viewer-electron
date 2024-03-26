@@ -22,11 +22,9 @@ const versions = reactive({ ...window.electron.process.versions })
 </template>
 <style lang="scss">
 .it-versions {
-  @apply inline-flex space-x-1 justify-end w-full;
+  @apply inline-flex justify-end w-full;
   &__item {
-    @apply text-xs font-light inline-flex items-center pl-1 pr-3 py-0.5 rounded m-0
-     bg-gray-700
-      text-gray-400 border border-gray-500;
+    @apply text-xs font-light inline-flex items-center pl-1 pr-3 m-0 text-gray-400 leading-4;
   }
 }
 </style>

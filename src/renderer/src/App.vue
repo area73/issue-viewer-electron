@@ -42,7 +42,7 @@ const route = useRoute()
   }
 
   &__body {
-    @apply overflow-auto p-4 bg-gray-800 text-gray-300 font-[200];
+    @apply overflow-auto px-4 pb-4 bg-gray-800 text-gray-300 font-[200];
   }
 
   &__footer {

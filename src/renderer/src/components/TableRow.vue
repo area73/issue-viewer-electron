@@ -1,6 +1,8 @@
 <script setup lang="ts">
 import { components } from '@octokit/openapi-types'
 import dayjs from 'dayjs'
+import { VueMarkdownIt } from '@f3ve/vue-markdown-it'
+import { full as emoji } from 'markdown-it-emoji'
 
 export interface Props {
   stripe: 'even' | 'odd'
@@ -18,16 +20,13 @@ const formatDate = (dateString: string) => {
   const date = dayjs(dateString)
   return date.format('dd MMMM D, YYYY')
 }
-const showDetail = (id: number) => {
-  console.log(`Show detail for issue ${id}`)
-}
 
 const stateToRingColor = (state: string) => {
   return state === 'open' ? 'ring-green-500' : 'ring-red-500'
 }
 </script>
 <template>
-  <div class="it-row" :class="props.stripe" :data-id="props.id" @click="showDetail(props.id)">
+  <div class="it-row" :class="props.stripe" :data-id="props.id">
     <div class="self-center">
       <img
         class="w-10 h-10 p-1 rounded-full ring-1"
@@ -37,14 +36,14 @@ const stateToRingColor = (state: string) => {
       />
     </div>
     <div>
-      <div class="text-lg">{{ props.title }}</div>
+      <div class="text-base font-medium">{{ props.title }}</div>
       <span
         v-for="label in labels"
         :key="label.id"
-        class="text-xs font-medium me-2 px-2.5 py-0.5 rounded text-black inline-block"
+        class="labels"
         :style="`background-color: #${label.color};`"
-        >{{ label.name }}</span
-      >
+        ><vue-markdown-it :source="label.name || ''" preset="commonmark" :plugins="[emoji]"
+      /></span>
       {{ props.comments }}
       <img src="/src/assets/comments.svg" class="w-5 h-5 inline" alt="comments" />
     </div>
@@ -55,17 +54,24 @@ const stateToRingColor = (state: string) => {
 </template>
 <style lang="scss">
 .odd {
-  @apply bg-gray-800;
-  @apply hover:bg-gray-700;
+  @apply bg-gray-700;
+  @apply hover:bg-gray-900;
 }
 
 .even {
-  @apply bg-gray-600;
-  @apply hover:bg-gray-500;
+  @apply bg-gray-800;
+  @apply hover:bg-gray-900;
 }
 
 .it-row {
-  @apply grid grid-cols-[88px_auto_max-content] mx-8 px-8 items-stretch py-3 border-b-2 border-gray-800 shadow-lg shadow-slate-700;
-  @apply hover:shadow-2xl hover:cursor-pointer hover:shadow-slate-400  hover:relative;
+  @apply grid grid-cols-[88px_auto_max-content] mx-8 px-8 items-stretch py-3 border-b-2 border-gray-800;
+  @apply hover:cursor-pointer hover:relative;
+}
+
+.labels {
+  @apply text-xs font-medium me-2 px-2.5 py-0 rounded inline-block mt-2;
+  p {
+    @apply text-xs font-medium text-black leading-5;
+  }
 }
 </style>
