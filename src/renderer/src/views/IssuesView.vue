@@ -15,14 +15,16 @@ const showDetail = async (id: number) => {
 
 const issues = ref<components['schemas']['issue'][]>()
 const page = ref(1)
+const transitionClass = ref('')
 
 onMounted(() => {
   fetchIssues()
 })
 
 const fetchIssues = async () => {
-  console.log(page.value)
-  issues.value = await getIssues('core', page.value)
+  transitionClass.value = 'fade-out'
+  issues.value = await getIssues(page.value)
+  transitionClass.value = 'fade-in'
 }
 
 const nextPage = async () => {
@@ -47,22 +49,35 @@ const prevPage = async () => {
         @paginator-plus="nextPage"
       />
     </div>
-    <TableRow
-      v-for="(issue, index) in issues"
-      :id="issue.id"
-      :key="issue.id"
-      :stripe="index % 2 === 0 ? 'even' : 'odd'"
-      :state="issue.state"
-      :title="issue.title"
-      :comments="issue.comments"
-      :created-at="issue.created_at"
-      :user="issue.user"
-      :labels="issue.labels"
-      @click="showDetail(issue.number)"
-    />
+    <div :class="transitionClass">
+      <TableRow
+        v-for="(issue, index) in issues"
+        :id="issue.id"
+        :key="issue.id"
+        :stripe="index % 2 === 0 ? 'even' : 'odd'"
+        :state="issue.state"
+        :title="issue.title"
+        :comments="issue.comments"
+        :created-at="issue.created_at"
+        :user="issue.user"
+        :labels="issue.labels as components['schemas']['label'][]"
+        @click="showDetail(issue.number)"
+      />
+    </div>
   </div>
 </template>
+
 <style lang="scss">
+.fade-out {
+  opacity: 0;
+  transition: opacity 0.5s ease;
+}
+
+.fade-in {
+  opacity: 1;
+  transition: opacity 0.5s ease;
+}
+
 .it-issues {
   @apply py-8;
 
@@ -70,10 +85,9 @@ const prevPage = async () => {
     @apply font-semibold mx-8 p-2 grid grid-cols-[auto_max-content] items-center;
     @apply sticky top-[0px] z-20;
     @apply bg-gray-800 border-b border-gray-700;
+
     &-title {
       @apply text-xl;
-    }
-    &-paginator {
     }
   }
 }

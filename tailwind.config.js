@@ -45,16 +45,17 @@ module.exports = {
       }
     },
     fontSize: {
-      '4xl': ['2.474rem', '3.5rem'],
-      '3xl': ['2.128rem', '3.5rem'],
-      '2xl': ['1.829rem', '3.5rem'],
-      xl: ['1.573rem', '3.5rem'],
-      lg: ['1.353rem', '1.75rem'],
+      '4xl': ['2.474rem', '1.16666666666'],
+      '3xl': ['2.128rem', '1.2'],
+      '2xl': ['1.829rem', '1.25'],
+      xl: ['1.573rem', '1.3'],
+      lg: ['1.353rem', '1.5'],
       md: ['1.163rem', '1.75rem'],
       base: ['1rem', '1.75rem'],
       sm: ['0.86rem', '1.75rem'],
       xs: ['0.739rem', '1.75rem']
     },
+
     fontFamily: {
       Montserrat: ['Montserrat', 'serif'],
       body: ['Montserrat', 'Inter', 'ui-sans-serif', 'system-ui'],

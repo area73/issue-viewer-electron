@@ -1,7 +1,7 @@
 import { app, shell, BrowserWindow, ipcMain } from 'electron'
 import { join } from 'path'
 import { electronApp, optimizer, is } from '@electron-toolkit/utils'
-import installExtension, { VUEJS3_DEVTOOLS, VUEJS_DEVTOOLS } from 'electron-devtools-installer'
+import installExtension from 'electron-devtools-installer'
 import icon from '../../resources/icon.png?asset'
 
 function createWindow(): void {

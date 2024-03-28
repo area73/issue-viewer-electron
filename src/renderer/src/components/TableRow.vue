@@ -29,6 +29,7 @@ const stateToRingColor = (state: string) => {
   <div class="it-row" :class="props.stripe" :data-id="props.id">
     <div class="self-center">
       <img
+        loading="lazy"
         class="w-10 h-10 p-1 rounded-full ring-1"
         :class="stateToRingColor(props.state)"
         :src="props.user?.avatar_url"

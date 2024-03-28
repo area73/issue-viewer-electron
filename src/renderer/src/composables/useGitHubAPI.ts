@@ -1,15 +1,16 @@
 import { Octokit } from '@octokit/core'
-const octokit = new Octokit({ auth: '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' })
+
+const octokit = new Octokit({ auth: import.meta.env.VITE_GITHUB_TOKEN })
+
+const owner = 'vuejs'
+const repo = 'core'
 
 export default function useGitHubAPI() {
-  const getIssues = (repo: string, page: number) =>
+  const getIssues = (page: number) =>
     octokit
       .request('GET /repos/{owner}/{repo}/issues', {
-        owner: 'vuejs',
+        owner,
         repo,
-        headers: {
-          'X-GitHub-Api-Version': '2022-11-28'
-        },
         per_page: 20,
         page
       })
@@ -24,12 +25,9 @@ export default function useGitHubAPI() {
   const getIssue = (id: string) =>
     octokit
       .request('GET /repos/{owner}/{repo}/issues/{issue_number}', {
-        owner: 'vuejs',
-        repo: 'core',
-        issue_number: parseInt(id),
-        headers: {
-          'X-GitHub-Api-Version': '2022-11-28'
-        }
+        owner,
+        repo,
+        issue_number: parseInt(id)
       })
       .then((d) => {
         console.log(d)

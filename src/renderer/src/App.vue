@@ -16,7 +16,7 @@ const route = useRoute()
           <!-- main content -->
           <component :is="Component"></component>
           <!-- loading state -->
-          <template #fallback> <Skeleton /></template>
+          <template #fallback><Skeleton /></template>
         </Suspense>
       </Transition>
     </RouterView>
@@ -37,9 +37,6 @@ const route = useRoute()
 
 .app {
   @apply grid grid-rows-[auto_1fr_auto] h-screen;
-
-  &__header {
-  }
 
   &__body {
     @apply overflow-auto px-4 pb-4 bg-gray-800 text-gray-300 font-[200];

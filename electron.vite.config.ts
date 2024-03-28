@@ -1,5 +1,8 @@
 import { resolve } from 'path'
 import { defineConfig, externalizeDepsPlugin, bytecodePlugin } from 'electron-vite'
+
+import { plugin as mdPlugin, Mode } from 'vite-plugin-markdown'
+
 import vue from '@vitejs/plugin-vue'
 
 export default defineConfig({
@@ -15,6 +18,6 @@ export default defineConfig({
         '@renderer': resolve('src/renderer/src')
       }
     },
-    plugins: [vue()]
+    plugins: [vue(), mdPlugin({ mode: [Mode.MARKDOWN] })]
   }
 })
