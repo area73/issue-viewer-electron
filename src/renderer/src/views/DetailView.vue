@@ -7,6 +7,7 @@ import { VueMarkdownIt } from '@f3ve/vue-markdown-it'
 import { figure } from '@mdit/plugin-figure'
 import mila from 'markdown-it-link-attributes'
 import ins from 'markdown-it-ins'
+import { markdownItTable } from 'markdown-it-table'
 import mdCodeBlock from 'markdown-it-code-block'
 
 const { getIssue } = useGitHubAPI()
@@ -28,7 +29,7 @@ onMounted(async () => {
 <template>
   <div class="it-issues-detail">
     <div class="grid grid-cols-[auto_30px] pb-4 pt-6 px-4 sticky top-[0px] z-20 bg-gray-800">
-      <h2 class="inline text-lg font-medium">{{ post?.title }}</h2>
+      <h2 class="inline text-lg mt-0">{{ post?.title }}</h2>
       <span>
         <button
           type="button"
@@ -56,10 +57,11 @@ onMounted(async () => {
     </div>
     <div class="py-12 px-10 bg-gray-900">
       <vue-markdown-it
-        :source="post?.body || ''"
+        :source="post?.body || '🤷‍♂️ No data available for this issue.'"
         :options="options"
         preset="commonmark"
         :plugins="[
+          markdownItTable,
           mdCodeBlock,
           figure,
           ins,

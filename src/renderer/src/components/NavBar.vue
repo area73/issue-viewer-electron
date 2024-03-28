@@ -59,8 +59,8 @@ const setActiveIf = (path: string) => {
 }
 
 .it-nav {
-  @apply w-full z-20 top-0 start-0 grid grid-cols-[auto_max-content] items-center  border-b border-gray-400;
-  @apply bg-gray-800;
+  @apply w-full z-20 top-0 start-0 grid grid-cols-[auto_max-content] items-center  border-b;
+  @apply bg-gray-800 border-gray-400;
 
   &__claim {
     @apply p-2 grid grid-cols-[40px_auto] items-center;
@@ -70,8 +70,8 @@ const setActiveIf = (path: string) => {
     @apply mr-4 font-medium  inline-flex rounded-md shadow-sm;
   }
   &__paths {
-    @apply p-1 col-span-2 font-light text-xs text-gray-400;
-    @apply bg-gray-900 border-gray-700 border-t;
+    @apply p-1 col-span-2 font-light text-xs;
+    @apply bg-gray-900 border-gray-700 text-gray-400 border-t;
   }
 }
 </style>

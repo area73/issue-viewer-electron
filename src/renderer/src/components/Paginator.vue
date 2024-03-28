@@ -53,7 +53,9 @@ defineProps<{ title: string }>()
   @apply p-1 grid  items-center justify-center grid-cols-[30px_auto_30px];
 
   &__button {
-    @apply border border-gray-500 text-white focus:ring-4 focus:outline-none font-medium text-sm p-2 text-center inline-flex items-center bg-gray-900 hover:bg-gray-700 focus:ring-teal-800;
+    @apply border border-gray-500 text-white  font-medium text-sm p-2 text-center inline-flex items-center bg-gray-900;
+    @apply focus:ring-4 focus:outline-none focus:ring-teal-800;
+    @apply hover:bg-gray-700;
   }
 }
 </style>
