@@ -22,9 +22,9 @@
 
 - Download repo
 - need to have Node V > 18
-- you will need to have a valid `GitHub App user access tokens` or `Fine-grained personal access tokens`
-- **Rename `.env.template` to `.env`**
-- **NOTE:** In order to easily test the application, I provide a `.env.template` with a temporary github valid token that you can use to test the app
+- you will need to have a valid `GitHub App user access tokens` or [`Fine-grained personal access tokens`](https://docs.github.com/en/apps/creating-github-apps/authenticating-with-a-github-app/generating-a-user-access-token-for-a-github-app)
+- **Rename `.env.template` to `.env`** and add you personal token
+- **NOTE:** In order to easily test the application, I provide a `.env.template` with a temporary github token , this token is not valid anymore so please **generate your own token**
 
 ### Warning
 
